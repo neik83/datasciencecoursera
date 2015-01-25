@@ -1,3 +1,4 @@
+# Load the dplyr package
 library(dplyr)
 
 # Get the set of variables
@@ -59,11 +60,5 @@ tidydf <- dataset %>%
     group_by(activity, subject) %>% 
     summarise_each(funs(mean))
 
-
-
-
-
-
-
-
-
+# Write the data set to file in the current working folder
+write.table(tidydf, file="./tidydataset.txt", row.names=FALSE)
